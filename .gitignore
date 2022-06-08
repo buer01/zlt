@@ -1,6 +1,5 @@
 .idea/
 pom.xml
-zlt.iml
 src/test/
 src/main/resources/mapper/*.xml
 src/main/resources/application.yml
