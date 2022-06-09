@@ -1,6 +1,6 @@
 package com.zlt.Database_leakage_RSA.dao;
 
-import com.entity.User;
+import com.zlt.Database_leakage_RSA.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

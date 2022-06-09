@@ -1,7 +1,7 @@
 package com.zlt.Database_leakage_RSA.controller;
 
-import com.dao.UserDao;
-import com.entity.User;
+import com.zlt.Database_leakage_RSA.dao.UserDao;
+import com.zlt.Database_leakage_RSA.entity.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
