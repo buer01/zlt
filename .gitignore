@@ -4,3 +4,4 @@ src/test/
 src/main/resources/mapper/*.xml
 src/main/resources/application.yml
 src/main/resources/static/uploaded/*
+target/
