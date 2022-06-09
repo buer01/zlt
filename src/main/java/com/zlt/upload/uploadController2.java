@@ -24,9 +24,9 @@ public class uploadController2 {
     public @ResponseBody
     String upload(@RequestParam MultipartFile file, HttpServletRequest request){
         String[] blackList = {".php",".php5",".php4","php3",};
-
+        String c = System.getProperty("user.dir");
         if(!file.isEmpty()){
-            String uploadPath = "/Users/zhangyunlong/Desktop/java_Maven/diyici/src/main/resources/uploaded/";
+            String uploadPath =  c + "/src/main/resources/uploaded/";//"/Users/zhangyunlong/Desktop/java_Maven/diyici/src/main/resources/uploaded/";
             // 如果目录不存在则创建
             File uploadDir = new File(uploadPath);
             if (!uploadDir.exists()) {
