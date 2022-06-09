@@ -28,6 +28,7 @@ public class uploadController {
         String c = System.getProperty("user.dir");
         if(!file.isEmpty()){
             String uploadPath = c + "/src/main/resources/uploaded/";//"/Users/zhangyunlong/Desktop/java_Maven/diyici/src/main/resources/uploaded/";
+            System.out.println(uploadPath);
             // 如果目录不存在则创建
             File uploadDir = new File(uploadPath);
             if (!uploadDir.exists()) {
