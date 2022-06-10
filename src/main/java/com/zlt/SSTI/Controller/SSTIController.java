@@ -31,9 +31,7 @@ public class SSTIController {
     @GetMapping("/velocity")
     @ApiOperation("velocity-ssti注入")
     public String velocity(String template) throws UnsupportedEncodingException {
-        //template = template.replaceAll("exec","");
-        //template = template.replaceAll("Runtime","");
-        //template = template.replaceAll("bash","");
+        template = template.replaceAll("bash","");
         System.out.println(template);
         Velocity.init();
 

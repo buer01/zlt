@@ -23,11 +23,6 @@ import org.w3c.dom.NodeList;
 
 import java.util.concurrent.*;
 
-
-import com.sun.corba.se.impl.orbutil.closure.Future;
-import com.sun.corba.se.impl.orbutil.threadpool.TimeoutException;
-
-
 /**
  * java xxe vul code
  */
@@ -52,9 +47,12 @@ public class XXEController {
                     System.out.println(xxe.getPayload());
                     String payload = xxe.getPayload();
                     //waf过滤
-//                    payload = payload.replaceAll("file:/","");
-//                    payload = payload.replaceAll("SYSTEM","");
-//                    payload = payload.replaceAll("ENTITY","");
+                    while(payload.indexOf("file")!=-1){
+                        payload.replaceAll("file","");
+                    }
+                    payload.replaceAll("SYSTEM","");
+                    payload.replaceAll("http","");
+
                     System.out.println(payload);
                     //读取payload
                     XMLReader xmlReader = XMLReaderFactory.createXMLReader();
@@ -78,21 +76,6 @@ public class XXEController {
             e.printStackTrace();
             return EXCEPT+"/timeout自动响应. if you have get my.ini, ignore except.";
         }
-//        try {
-//            //获取payload
-//            System.out.println(xxe.getPayload());
-//            String payload = xxe.getPayload();
-////            payload = payload.replaceAll("file:/","");
-////            payload = payload.replaceAll("SYSTEM","");
-////            payload = payload.replaceAll("ENTITY","");
-//            System.out.println(payload);
-//            //读取payload
-//            XMLReader xmlReader = XMLReaderFactory.createXMLReader();
-//            xmlReader.parse(new InputSource(new StringReader(payload)));  // parse xml
-//            return "xmlReader xxe vuln code";
-//        } catch (Exception e) {
-//            return EXCEPT;
-//        }
     }
 
     // documentbuilder有回显
@@ -104,9 +87,10 @@ public class XXEController {
             System.out.println(xxe.getPayload());
             String payload = xxe.getPayload();
             //waf过滤
-//            payload = payload.replaceAll("file:/","");
-//            payload = payload.replaceAll("SYSTEM","");
-//            payload = payload.replaceAll("ENTITY","");
+            while(payload.indexOf("file")!=-1){
+                payload.replaceAll("file","");
+            }
+
             System.out.println(payload);
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();
