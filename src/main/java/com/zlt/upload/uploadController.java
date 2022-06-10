@@ -27,9 +27,9 @@ public class uploadController {
         //
         String c = System.getProperty("user.dir");
         if(!file.isEmpty()){
-            String uploadPath = c + "/src/main/resources/static/uploaded/";//"/Users/zhangyunlong/Desktop/java_Maven/diyici/src/main/resources/uploaded/";
-            System.out.println(uploadPath);
-            // 如果目录不存在则创建
+            String uploadPath = c + "/target/static/uploaded/";//"/Users/zhangyunlong/Desktop/java_Maven/diyici/src/main/resources/uploaded/";
+            // 如果目录不存在则创建   文件目录：http://ip:port/static/uploaded/yourFilename
+            //System.out.println(c);
             File uploadDir = new File(uploadPath);
             if (!uploadDir.exists()) {
                 uploadDir.mkdir();
@@ -63,6 +63,10 @@ public class uploadController {
         }
     }
 
+//    public static void main(String[] args) {
+//        String c = System.getProperty("user.dir");
+//        System.out.println(c);
+//    }
 
 }
 

@@ -6,12 +6,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration
-public class MyWebMvcConfigurer extends WebMvcConfigurerAdapter {
+public class MyWebMvcConfigurer implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry){
 
-        registry.addResourceHandler("/uploaded/**").addResourceLocations("classpath:/uploaded/");
-        super.addResourceHandlers(registry);
+        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/","file:target/static/");
+
         //"/Users/zhangyunlong/Desktop/java_Maven/diyici/src/main/resources/uploaded/"
     }
 
