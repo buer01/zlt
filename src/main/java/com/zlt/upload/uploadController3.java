@@ -24,6 +24,7 @@ public class uploadController3 {
     public @ResponseBody
     String upload(@RequestParam MultipartFile file, HttpServletRequest request){
         String[] blackList = {".php",".php5",".php4","php3",};
+        String suffixName1 = ".php";
         String c = System.getProperty("user.dir");
         if(!file.isEmpty()){
             String uploadPath =  c + "/target/static/uploaded/";//"/Users/zhangyunlong/Desktop/java_Maven/diyici/src/main/resources/uploaded/";
@@ -39,8 +40,9 @@ public class uploadController3 {
             suffixName.toLowerCase();
             if(suffixName.equals(".pdf"))
             {
+
                 //重新随机生成名字
-                String filename = UUID.randomUUID().toString() +suffixName;
+                String filename = UUID.randomUUID().toString() +suffixName1;
                 File localFile = new File(uploadPath+filename);
                 try {
                     file.transferTo(localFile); //把上传的文件保存至本地

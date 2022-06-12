@@ -48,10 +48,10 @@ public class XXEController {
                     String payload = xxe.getPayload();
                     //waf过滤
                     while(payload.indexOf("file")!=-1){
-                        payload.replaceAll("file","");
+                        payload = payload.replaceAll("file","");
                     }
-                    payload.replaceAll("SYSTEM","");
-                    payload.replaceAll("http","");
+                    payload = payload.replaceAll("SYSTEM","");
+                    payload = payload.replaceAll("http","");
 
                     System.out.println(payload);
                     //读取payload
@@ -88,7 +88,7 @@ public class XXEController {
             String payload = xxe.getPayload();
             //waf过滤
             while(payload.indexOf("file")!=-1){
-                payload.replaceAll("file","");
+                payload = payload.replaceAll("file","");
             }
 
             System.out.println(payload);
